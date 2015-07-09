@@ -68,6 +68,12 @@ sudo chmod 775 *
 diamond blastp -d /data/DATABASES/KOBAS/seq_pep/ko -q sequence_files/SDB_ONE.faa -o SDB_ONE.faa.dmd -e 1e-10 -k 1
 ```
 
+- Extract KO numbers
+ 
+```
+cut -f 2 SSDB_ONE.faa.dmd > SDB_ONE.KO
+```
 
+- now grep the annotations from the KO
 
 

@@ -100,6 +100,10 @@ SELECT ORF_G_IDs.ORF, ORF_G_IDs.GID, KoGenes.KO FROM ORF_G_IDs JOIN KoGenes ON O
 CREATE TABLE IF NOT EXISTS allout as
 SELECT * FROM ORFS LEFT JOIN out ON ORFS.ORF = out.ORF
 
+.separator "\t"
+.output SDB_ONE.G_ID_KO_ORF_ID
+select * out.ORF;
+
 ```
 
 

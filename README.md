@@ -92,6 +92,8 @@ create table KoGenes (KO, GID);
 create table ORFS (ORF)
 .import SDB_ONE.ORF_IDs ORFS
 
+SELECT ORF_G_IDs.ORF, ORF_G_IDs.GID, KoGenes.KO FROM ORF_G_IDs JOIN KoGenes ON ORF_G_IDs.GID = KoGenes.GID;
+
 ```
 
 

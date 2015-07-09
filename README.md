@@ -85,7 +85,7 @@ create table ORF_G_IDs (ORF, GID)
 .import SDB_ONE.ORF_G_IDs ORF_G_IDs
 
 .separator " "
-create table KoGenes (KO, gene);
+create table KoGenes (KO, GID);
 .import KoGenes KoGenes
 
 .separator \t

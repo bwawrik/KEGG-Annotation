@@ -70,9 +70,13 @@ gunzip SDB_ONE.faa.dmd.gz
 ```
 
 - Extract KO numbers
- 
 ```
 cut -f 1,2 SDB_ONE.faa.dmd > SDB_ONE.ORF_G_IDs
+```
+
+- get gene IDs from faa file
+```
+grep '>' sequence_files/SDB_ONE.faa | sed 's/>//g' > SDB_ONE.ORF_IDs
 ```
 
 - now grep KO numbers annotations from the KO

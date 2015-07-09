@@ -4,13 +4,13 @@
 - First, deploy the KOBAS and Uniprot databses for blast, usearch, and diamond
 
 
-Uniprot (blast / usearch)
-#------------------------------------------------------------------------------
+```
 cd /data/DATABASES
 mkdir UNIPROT
 cd UNIPROT
 wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 gunzip uniprot_sprot.fasta.gz
+```
 
 # MAKE USEARCH DATABASE
 usearch -makeudb_usearch uniprot_sprot.fasta -output uniprot.udb

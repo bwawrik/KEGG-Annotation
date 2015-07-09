@@ -60,5 +60,14 @@ sudo chmod 775 *
 ```
 
 
+### KEGG annotation procedure
+
+- first, run a diamond search agains the KOBAS KO database
+
+```
+diamond blastp -d /data/DATABASES/KOBAS/seq_pep/ko -q sequence_files/SDB_ONE.faa -o SDB_ONE.faa.dmd -e 1e-10 -k 1
+```
+
+
 
 

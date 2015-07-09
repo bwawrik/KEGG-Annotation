@@ -69,16 +69,36 @@ diamond blastp -d /data/DATABASES/KOBAS/seq_pep/ko -q sequence_files/SDB_ONE.faa
 gunzip SDB_ONE.faa.dmd.gz
 ```
 
-- Extract KO numbers
+- Extract KO numbers and get gene IDs from faa file
 ```
 cut -f 1,2 SDB_ONE.faa.dmd > SDB_ONE.ORF_G_IDs
-```
-
-- get gene IDs from faa file
-```
 grep '>' sequence_files/SDB_ONE.faa | sed 's/>//g' > SDB_ONE.ORF_IDs
+cut -f 2 SDB_ONE.ORF_G_IDs > SDB_ONE.G_IDs
 ```
 
-- now grep KO numbers annotations from the KO
+- Make an SQlite database and add the tables
+```
+sqlite3 annotate.sqlite
+
+.separator \t
+create table ORF_G_IDs (ORF, GID)
+.import SDB_ONE.ORF_G_IDs ORF_G_IDs
+
+.separator " "
+create table KoGenes (KO, gene);
+.import KoGenes KoGenes
+
+
+
+
+
+
+
+
+- now grep KO numbers annotations from the KO file
+```
+grep -f SDB_ONE.G_IDs KoGenes > SDB_ONE.G_IDs_KO
+
+
 
 

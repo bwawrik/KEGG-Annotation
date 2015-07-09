@@ -27,8 +27,38 @@ diamond makedb --in uniprot_sprot.fasta -d uniprot_sprot.diamond.db
 ```
 - Give everyone permission
 ```
-sudo chown bwawrik:mgmic *
 sudo chmod 775 *
 ```
+
+##### KOBAS
+
+- Download KOBAS files and unzip
+```
+mkdir /data/KOBAS/sqlite3
+mkdir /data/KOBAS/seq_pep
+cd /data/KOBAS/sqlite3
+wget http://kobas.cbi.pku.edu.cn/download/sqlite3/ko.db.gz
+gunzip ko.db.gz
+cd /data/KOBAS/seq_pep
+wget http://kobas.cbi.pku.edu.cn/download/seq_pep/ko.pep.fasta.gz
+gunzip ko.pep.fasta.gz
+```
+- Make a blastable database
+```
+makeblastdb -in ko.pep.fasta -dbtype prot
+```
+- Make a Diamond searchable database
+```
+diamond makedb --in ko.pep.fasta -d ko.pep
+```
+
+- Note: the KOBAS fasta file is to big for the free version of Usearch. You will need the 64 bit version to use usearch.  This is about $1k/
+
+- Give everyone permission
+```
+sudo chmod 775 *
+```
+
+
 
 

@@ -81,7 +81,7 @@ cut -f 2 SDB_ONE.ORF_G_IDs > SDB_ONE.G_IDs
 sqlite3 annotate.sqlite
 
 .separator \t
-create table ORF_G_IDs (ORF, GID)
+create table ORF_G_IDs (ORF, GID);
 .import SDB_ONE.ORF_G_IDs ORF_G_IDs
 
 .separator " "
@@ -89,10 +89,8 @@ create table KoGenes (KO, GID);
 .import KoGenes KoGenes
 
 .separator \t
-create table ORFS (ORF)
+create table ORFS (ORF);
 .import SDB_ONE.ORF_IDs ORFS
-
-SELECT ORF_G_IDs.ORF, ORF_G_IDs.GID, KoGenes.KO FROM ORF_G_IDs JOIN KoGenes ON ORF_G_IDs.GID = KoGenes.GID;
 
 CREATE TABLE IF NOT EXISTS out as
 SELECT ORF_G_IDs.ORF, ORF_G_IDs.GID, KoGenes.KO FROM ORF_G_IDs JOIN KoGenes ON ORF_G_IDs.GID = KoGenes.GID;

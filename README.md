@@ -88,17 +88,7 @@ create table ORF_G_IDs (ORF, GID)
 create table KoGenes (KO, gene);
 .import KoGenes KoGenes
 
-
-
-
-
-
-
-
-- now grep KO numbers annotations from the KO file
 ```
-grep -f SDB_ONE.G_IDs KoGenes > SDB_ONE.G_IDs_KO
-
 
 
 

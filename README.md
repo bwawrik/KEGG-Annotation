@@ -102,7 +102,7 @@ SELECT * FROM ORFS LEFT JOIN out ON ORFS.ORF = out.ORF
 
 .separator "\t"
 .output SDB_ONE.G_ID_KO_ORF_ID
-select * out.ORF;
+SELECT * FROM allout
 
 ```
 

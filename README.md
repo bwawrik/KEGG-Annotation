@@ -1,8 +1,10 @@
-### KEGG-Annotation
+#### KEGG-Annotation
 #### The purpose of this repository is to describe a simple script of KEGG annotation of AA sequence files
+-
+- First, deploy the Uniprot databse for blast, usearch, and diamond
+- 
 
-#------------------------------------------------------------------------------
-# Uniprot (blast / usearch)
+ Uniprot (blast / usearch)
 #------------------------------------------------------------------------------
 cd /data/DATABASES
 mkdir UNIPROT

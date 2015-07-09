@@ -88,6 +88,10 @@ create table ORF_G_IDs (ORF, GID)
 create table KoGenes (KO, gene);
 .import KoGenes KoGenes
 
+.separator \t
+create table ORFS (ORF)
+.import SDB_ONE.ORF_IDs ORFS
+
 ```
 
 

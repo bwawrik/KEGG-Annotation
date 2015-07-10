@@ -104,5 +104,6 @@ SELECT * FROM allout
 
 ```
 
+SELECT ORF_G_IDs.ORF, KoGenes.KO FROM ORF_G_IDs LEFT JOIN KoGenes ON ORF_G_IDs.GID = KoGenes.GID;
 
 
